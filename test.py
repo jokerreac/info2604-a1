@@ -1,3 +1,6 @@
+import random
+
+
 def encrypt(plain_text, key):
     cipher_text = ''
     key_len = len(key)
@@ -5,6 +8,7 @@ def encrypt(plain_text, key):
         cipher_text += chr((ord(char) + ord(key[i % key_len])) % 256)
     
     return cipher_text
+
 
 def decrypt(cipher_text, key):
     plain_text = ''
@@ -14,12 +18,10 @@ def decrypt(cipher_text, key):
 
     return plain_text
 
+
+def generate_otp_key(length):
+    otp = ''
+    for i in range(length):
+        otp += chr(random.randint(0, 255))
     
-plain_text = 'Hello World!'
-key = 'why ALl the SaD faceS?'
-
-cipher = encrypt(plain_text, key)
-print(cipher)
-
-plain = decrypt(cipher, key)
-print(plain)
+    return otp
