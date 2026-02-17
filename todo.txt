@@ -1,3 +1,0 @@
-- implement bytearray or similar
-- revise varaible names
-- format output
